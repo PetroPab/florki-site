@@ -10,6 +10,12 @@ import {
 
 const isDev = process.env.NODE_ENV === 'development';
 
+async function triggerDeploy(): Promise<void> {
+  const hookUrl = process.env.VERCEL_DEPLOY_HOOK;
+  if (!hookUrl || isDev) return;
+  await fetch(hookUrl, { method: 'POST' }).catch(() => {});
+}
+
 // ─── JSON-файлы data/ ────────────────────────────────────────────────────────
 
 export async function readDataFile<T>(filename: string): Promise<T> {
@@ -32,6 +38,7 @@ export async function writeDataFile(
       content,
       `content: update ${filename}`
     );
+    await triggerDeploy();
   }
 }
 
@@ -80,6 +87,7 @@ export async function writeArticleFile(
       content,
       `content: update article ${slug}`
     );
+    await triggerDeploy();
   }
 }
 
@@ -99,5 +107,6 @@ export async function deleteArticleFile(slug: string): Promise<void> {
       `content: delete article ${slug}`,
       sha
     );
+    await triggerDeploy();
   }
 }
