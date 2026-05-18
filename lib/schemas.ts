@@ -8,7 +8,7 @@ export const ProductSchema = z.object({
   featured: z.boolean(),
   price: z.number().positive(),
   priceNote: z.string().optional(),
-  description: z.string().min(10),
+  description: z.string().optional().default(''),
   care: z.string().optional(),
   careArticleSlug: z.string().optional(),
   dimensions: z.object({
@@ -17,17 +17,17 @@ export const ProductSchema = z.object({
     depth: z.number().optional(),
     diameter: z.number().optional(),
   }),
-  composition: z.array(z.string()).min(1),
+  composition: z.array(z.string()).default([]),
   images: z
     .array(
       z.object({
         src: z.string(),
-        alt: z.string().min(5),
+        alt: z.string().min(1),
         width: z.number(),
         height: z.number(),
       })
     )
-    .min(1),
+    .default([]),
   createdAt: z.string(),
   updatedAt: z.string().optional(),
 });
