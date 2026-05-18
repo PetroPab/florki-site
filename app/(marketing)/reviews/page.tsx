@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Отзывы клиентов — студия Флорки, Ярославль',
   description:
     'Настоящие отзывы покупателей флорариумов студии «Флорки» с Авито, Яндекс.Карт, 2ГИС и Telegram. Ничего не придумываем.',
+  alternates: { canonical: '/reviews' },
 };
 
 export default function ReviewsPage() {

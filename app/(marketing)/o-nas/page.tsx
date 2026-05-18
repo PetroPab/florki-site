@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'О студии — Флорки, Ярославль',
   description:
     'Студия флорариумов «Флорки» в Ярославле. Делаем живые экосистемы в стекле вручную с 2022 года.',
+  alternates: { canonical: '/o-nas' },
 };
 
 export default function ONasPage() {

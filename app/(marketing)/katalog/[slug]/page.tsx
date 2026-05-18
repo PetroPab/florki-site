@@ -25,9 +25,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) return {};
+  const description = product.description
+    ? product.description.slice(0, 160)
+    : `Флорариум «${product.name}» — студия Флорки, Ярославль.`;
+  const ogImage = product.images[0]
+    ? {
+        url: product.images[0].src,
+        width: product.images[0].width,
+        height: product.images[0].height,
+        alt: product.images[0].alt,
+      }
+    : undefined;
   return {
     title: `${product.name} — Флорки, Ярославль`,
-    description: product.description.slice(0, 160),
+    description,
+    alternates: { canonical: `/katalog/${slug}` },
+    openGraph: {
+      title: `${product.name} — студия Флорки`,
+      description,
+      url: `/katalog/${slug}`,
+      ...(ogImage ? { images: [ogImage] } : {}),
+    },
   };
 }
 

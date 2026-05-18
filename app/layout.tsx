@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 
 import { fraunces, golosText } from '@/app/fonts';
 import { siteConfig } from '@/data/site';
+import YandexMetrika from '@/components/analytics/YandexMetrika';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -47,6 +48,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: siteConfig.url,
   },
+  verification: {
+    yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+    google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
+  },
 };
 
 export const viewport: Viewport = {
@@ -64,6 +69,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="ru">
       <body className={`${fraunces.variable} ${golosText.variable} font-body`}>
         {children}
+        <YandexMetrika />
       </body>
     </html>
   );

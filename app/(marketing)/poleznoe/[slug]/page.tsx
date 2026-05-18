@@ -28,6 +28,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${article.title} — Флорки`,
     description: article.description,
+    alternates: { canonical: `/poleznoe/${slug}` },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url: `/poleznoe/${slug}`,
+      type: 'article',
+      publishedTime: article.date,
+      ...(article.updatedAt ? { modifiedTime: article.updatedAt } : {}),
+      ...(article.cover
+        ? { images: [{ url: article.cover, alt: article.coverAlt }] }
+        : {}),
+    },
   };
 }
 

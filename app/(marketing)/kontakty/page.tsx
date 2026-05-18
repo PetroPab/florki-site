@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: 'Контакты — студия Флорки, Ярославль',
   description:
     'Адрес, телефон, Telegram и форма заявки. Студия флорариумов «Флорки» в Ярославле.',
+  alternates: { canonical: '/kontakty' },
 };
 
 export default function KontaktyPage() {

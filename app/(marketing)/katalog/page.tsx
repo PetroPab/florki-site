@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Каталог флорариумов — студия Флорки, Ярославль',
   description:
     'Флорариумы и живые композиции в наличии и под заказ. Студия «Флорки», Ярославль. Каждая работа — вручную.',
+  alternates: { canonical: '/katalog' },
 };
 
 export default function KatalogPage() {

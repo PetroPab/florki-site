@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: 'Полезное — статьи о флорариумах | Флорки, Ярославль',
   description:
     'Уход за флорариумами, как выбрать растения, идеи для подарков. Статьи от студии «Флорки» из Ярославля.',
+  alternates: { canonical: '/poleznoe' },
 };
 
 export default async function PoleznoeePage() {

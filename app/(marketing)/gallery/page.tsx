@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: 'Галерея работ — студия Флорки, Ярославль',
   description:
     'Фотографии флорариумов и живых композиций студии «Флорки» в Ярославле. Каждая работа — ручная, под конкретного клиента.',
+  alternates: { canonical: '/gallery' },
 };
 
 export default function GalleryPage() {
