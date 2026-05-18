@@ -261,6 +261,11 @@ export function ArticleEditor({
           />
 
           <div className="flex-1 space-y-3">
+            <p className="text-xs text-gray-400 bg-gray-50 rounded-lg px-3 py-2 leading-relaxed">
+              📐 1200 × 630 px (соотношение 16:9)
+              <br />
+              📦 Максимум 2 МБ · JPG или PNG
+            </p>
             <Field label="URL обложки">
               <input
                 type="text"

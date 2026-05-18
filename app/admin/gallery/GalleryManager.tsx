@@ -148,6 +148,11 @@ export function GalleryManager({
 
           {/* Поля */}
           <div className="flex-1 space-y-3">
+            <p className="text-xs text-gray-400 bg-gray-50 rounded-lg px-3 py-2 leading-relaxed">
+              📐 Любое соотношение сторон · мин. 1200 px по длинной стороне
+              <br />
+              📦 Максимум 2 МБ · JPG или PNG
+            </p>
             <Field label="Alt-текст (обязательно)">
               <input
                 type="text"

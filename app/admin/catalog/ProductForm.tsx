@@ -414,6 +414,11 @@ export function ProductForm({ initial = {}, isNew = false }: ProductFormProps) {
             e.target.value = '';
           }}
         />
+        <p className="text-xs text-gray-400 bg-gray-50 rounded-lg px-3 py-2 leading-relaxed">
+          📐 Квадрат или близко к нему · рекомендуется 1200 × 1200 px
+          <br />
+          📦 Максимум 2 МБ · JPG или PNG · светлый фон
+        </p>
       </section>
 
       {error && (
