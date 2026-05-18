@@ -175,27 +175,22 @@
     "createdAt": "2024-08-01"
   },
   {
-    "slug": "ravportvdatpysht",
-    "name": "равпортвдатпышт",
+    "slug": "schmchsmyachsmschmyam",
+    "name": "счмчсмячсмсчмям",
     "category": "florarium",
     "status": "in-stock",
-    "featured": true,
-    "price": 453453,
-    "description": "выфппафап",
-    "care": "фвыпыпв",
-    "dimensions": {
-      "width": 4,
-      "height": 4,
-      "depth": 3,
-      "diameter": 2
-    },
+    "featured": false,
+    "price": 33333,
+    "description": "ваываыа",
+    "care": "выаыва",
+    "dimensions": {},
     "composition": [],
     "images": [
       {
-        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127232756.jpg",
-        "alt": "равпортвдатпышт",
-        "width": 1280,
-        "height": 1280
+        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127288081.jpg",
+        "alt": "счмчсмячсмсчмям",
+        "width": 4096,
+        "height": 4096
       }
     ],
     "createdAt": "2026-05-18",
