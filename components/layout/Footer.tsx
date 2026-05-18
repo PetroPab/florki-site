@@ -64,22 +64,6 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
-              <li className="mt-2 pt-2 border-t border-border">
-                <Link
-                  href="/legal/privacy"
-                  className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-                >
-                  Политика конфиденциальности
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/legal/oferta"
-                  className="text-sm text-text-muted hover:text-text-secondary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
-                >
-                  Публичная оферта
-                </Link>
-              </li>
             </ul>
           </nav>
 
@@ -138,11 +122,24 @@ export function Footer() {
           </address>
         </div>
 
-        <div className="py-5 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-muted">
+        <div className="py-5 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-text-muted">
           <p>
             © {year} {siteConfig.fullName}
           </p>
-          <p>Сделано с любовью в Ярославле</p>
+          <div className="flex items-center gap-4">
+            <Link
+              href="/legal/privacy"
+              className="hover:text-text-secondary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            >
+              Политика конфиденциальности
+            </Link>
+            <Link
+              href="/legal/oferta"
+              className="hover:text-text-secondary transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent rounded-sm"
+            >
+              Публичная оферта
+            </Link>
+          </div>
         </div>
       </Container>
     </footer>

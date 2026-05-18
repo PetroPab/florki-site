@@ -16,7 +16,7 @@ export default function ReviewsStrip() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-        {reviews.map((review) => (
+        {reviews.slice(0, 3).map((review) => (
           <ReviewCard
             key={review.id}
             source={review.source as ReviewSource}
@@ -25,6 +25,7 @@ export default function ReviewsStrip() {
             date={review.date}
             text={review.text}
             originalUrl={review.originalUrl}
+            workPhoto={review.workPhoto}
           />
         ))}
       </div>

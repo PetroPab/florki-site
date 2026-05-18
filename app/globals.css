@@ -220,7 +220,8 @@
 }
 
 /* ─── Scroll reveal (без framer-motion) ─── */
-[data-reveal] {
+[data-reveal],
+[data-gallery-row] {
   opacity: 0;
   transform: translateY(16px);
   transition:
@@ -228,7 +229,8 @@
     transform 0.45s ease-out;
   transition-delay: var(--reveal-delay, 0ms);
 }
-[data-reveal].revealed {
+[data-reveal].revealed,
+[data-gallery-row].revealed {
   opacity: 1;
   transform: translateY(0);
 }
@@ -381,34 +383,39 @@
   transform: translateX(100%);
 }
 
-/* ─── Pulse-кольцо на главной CTA-кнопке ─── */
+/* ─── Pulse-свечение на CTA-кнопках ─── */
 .btn-pulse {
-  position: relative;
+  animation: pulseGlow 3s ease-in-out infinite;
 }
-.btn-pulse::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 2px solid currentColor;
-  opacity: 0;
-  animation: pulseRing 2.6s ease-out infinite;
-}
-@keyframes pulseRing {
-  0% {
-    inset: 0px;
-    opacity: 0.55;
-  }
+@keyframes pulseGlow {
+  0%,
   100% {
-    inset: -10px;
-    opacity: 0;
+    box-shadow: 0 0 6px 2px rgba(var(--color-accent) / 0.45);
+  }
+  50% {
+    box-shadow: 0 0 22px 7px rgba(var(--color-accent) / 0.75);
+  }
+}
+
+.btn-pulse-sm {
+  animation: pulseGlowSm 3s ease-in-out infinite;
+}
+@keyframes pulseGlowSm {
+  0%,
+  100% {
+    box-shadow: 0 0 4px 1px rgba(var(--color-accent) / 0.35);
+  }
+  50% {
+    box-shadow: 0 0 10px 3px rgba(var(--color-accent) / 0.6);
   }
 }
 
 /* ─── Reduced motion ─── */
 @media (prefers-reduced-motion: reduce) {
   [data-reveal],
-  [data-reveal].revealed {
+  [data-reveal].revealed,
+  [data-gallery-row],
+  [data-gallery-row].revealed {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

@@ -6,15 +6,15 @@
 
 ## Текущее состояние
 
-| Этап          | Статус       | Комментарий                                   |
-| ------------- | ------------ | --------------------------------------------- |
-| 0. Подготовка | 🟡 В работе  | Структура готова, нужны реальные фото         |
-| 1. Фундамент  | ✅ Готово    | Next.js 15, TypeScript, Tailwind, Vercel      |
-| 2. UI-kit     | ✅ Готово    | 35 компонентов                                |
-| 3. Страницы   | ✅ Готово    | Все 12 маршрутов работают                     |
-| 4. Контент    | 🟡 В работе  | Структура данных готова, нужны реальные фото  |
-| 5. Полировка  | 🟡 Частично  | Анимации и glassmorphism готовы, нужны аудиты |
-| 6. Запуск     | ⬜ Не начато | После готовности контента                     |
+| Этап          | Статус       | Комментарий                                      |
+| ------------- | ------------ | ------------------------------------------------ |
+| 0. Подготовка | 🟡 В работе  | Структура готова, нужны реальные фото            |
+| 1. Фундамент  | ✅ Готово    | Next.js 15, TypeScript, Tailwind, Vercel         |
+| 2. UI-kit     | ✅ Готово    | 33 компонента                                    |
+| 3. Страницы   | ✅ Готово    | Все 12 маршрутов работают                        |
+| 4. Контент    | 🟡 В работе  | Структура готова, нужны реальные фото и контакты |
+| 5. Полировка  | 🟡 Частично  | Анимации и glassmorphism готовы, нужны аудиты    |
+| 6. Запуск     | ⬜ Не начато | После готовности контента                        |
 
 **Следующий шаг:** загрузить реальные фотографии по `docs/IMAGES.md`
 
@@ -28,8 +28,8 @@
 
 - Структура данных: `data/products.json`, `data/reviews.json`, `data/gallery.json`
 - 6 товаров с описаниями, размерами, составом
-- 6 отзывов с реальными текстами
-- 9 позиций в галерее
+- 6 отзывов с фото работ (`workPhoto`)
+- 21 позиция в галерее (заглушки)
 - 2 статьи в MDX
 
 **Осталось:**
@@ -42,8 +42,8 @@
 
 ### Этап 1. Фундамент ✅
 
-- Next.js 15 (App Router) + TypeScript strict
-- Tailwind CSS с дизайн-токенами (цвета, шрифты, тени, z-index)
+- Next.js 15 (App Router, Turbopack) + TypeScript strict
+- Tailwind CSS v3 с дизайн-токенами (цвета, шрифты, тени, z-index)
 - Шрифты: **Fraunces** (display, italic) + **Golos Text** (body)
 - Vercel деплой настроен
 
@@ -87,6 +87,7 @@ Footer, Header, MobileMenu, Section
 | `/legal/privacy`   | `app/(marketing)/legal/privacy/page.tsx`   | ✅     |
 | `/legal/oferta`    | `app/(marketing)/legal/oferta/page.tsx`    | ✅     |
 | `404`              | `app/not-found.tsx`                        | ✅     |
+| `/poleznoe` loader | `app/(marketing)/poleznoe/loading.tsx`     | ✅     |
 
 ---
 
@@ -97,10 +98,12 @@ Footer, Header, MobileMenu, Section
 - Все данные загружаются из `data/*.json` и `content/articles/*.mdx`
 - `ImageWithFallback` показывает placeholder до загрузки фото
 - Сортировка: «в наличии» всегда выше «под заказ»
+- Отзывы с фото работ: `workPhoto` в типе, данных и компоненте
+- Галерея: 21 заглушка, justified layout, infinite scroll
 
 **Осталось (контент):**
 
-- [ ] 19 фотографий — детали в `docs/IMAGES.md`
+- [ ] 19 фотографий для товаров и галереи — детали в `docs/IMAGES.md`
 - [ ] Проверить тексты описаний товаров с заказчиком
 - [ ] Проверить тексты отзывов (реальные vs тестовые)
 - [ ] Дополнить статьи до 600+ слов для SEO
@@ -112,24 +115,26 @@ Footer, Header, MobileMenu, Section
 
 **Сделано:**
 
-- ✅ Scroll-reveal анимации (IntersectionObserver + CSS, без per-element framer-motion)
-- ✅ Floating blobs — анимированный фон (CSS keyframes)
+- ✅ Scroll-reveal анимации (`[data-reveal]`, IntersectionObserver + CSS)
+- ✅ Floating blobs — анимированный фон (CSS keyframes, 3 блоба)
 - ✅ Glassmorphism секции (`glass-section`, `glass-section-dense`)
-- ✅ Shimmer на кнопках при hover
-- ✅ Pulse-кольцо на CTA и хедер-кнопках
+- ✅ Shimmer на кнопках при hover (`btn-shimmer`)
+- ✅ Pulse-свечение на CTA и хедер-кнопках (`btn-pulse`, `btn-pulse-sm`)
 - ✅ `prefers-reduced-motion` — все анимации отключаются
 - ✅ Visible focus rings на всех интерактивных элементах
 - ✅ `nextjs-toploader` — прогресс-бар при переходах
 - ✅ JSON-LD: LocalBusiness + Product structured data
 - ✅ sitemap.ts + robots.ts
+- ✅ Галерея: justified layout + infinite scroll + reveal-анимации
+- ✅ Гидрация: `formatDate` и `formatPrice` без `Intl` — стабильны на сервере и клиенте
+- ✅ `/poleznoe`: `force-static` + loading skeleton — мгновенный переход
 
 **Осталось:**
 
-- [ ] Lighthouse аудит (цель: Perf ≥ 90, A11y ≥ 95, SEO = 100) — нужны реальные фото
+- [ ] Lighthouse аудит (цель: Perf ≥ 90, A11y ≥ 95, SEO = 100) — после реальных фото
 - [ ] Проверка контрастов на стеклянных секциях (WCAG AA)
 - [ ] Тестирование форм в Safari
 - [ ] Проверка на реальных устройствах (iPhone, Android)
-- [ ] `.env.example` и настройка Resend для формы контактов
 - [ ] Настроить NEXT_PUBLIC_TELEGRAM_URL, NEXT_PUBLIC_WHATSAPP_URL в `.env.local`
 
 ---
@@ -148,11 +153,11 @@ Footer, Header, MobileMenu, Section
 
 ## Известные проблемы
 
-| Проблема                                                                        | Приоритет  | Примечание                                         |
-| ------------------------------------------------------------------------------- | ---------- | -------------------------------------------------- |
-| `bg-bg` в page-блоках вне Section — перекрывает блобы                           | 🟡 Средний | Страницы katalog, o-nas имеют прямой `bg-bg` класс |
-| Slug товара «флорариум под заказ» — опечатка `individualnyi-zakazz` (двойное z) | 🟡 Средний | Поправить в `products.json` + папке                |
-| Нет `.env.example` в репозитории                                                | 🟠 Высокий | Resend API ключ не задокументирован                |
+| Проблема                                              | Приоритет  | Примечание                                             |
+| ----------------------------------------------------- | ---------- | ------------------------------------------------------ |
+| `bg-bg` в page-блоках вне Section — перекрывает блобы | 🟡 Средний | Страницы `katalog`, `o-nas` имеют прямой `bg-bg` класс |
+| Нет `.env.local` на деплое                            | 🟠 Высокий | Заполнить реальные контакты и Resend-ключ              |
+| Статьи короче 600 слов                                | 🟡 Средний | Нужно дополнить для SEO                                |
 
 ---
 

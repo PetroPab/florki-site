@@ -1,15 +1,28 @@
+const MONTHS_RU = [
+  'января',
+  'февраля',
+  'марта',
+  'апреля',
+  'мая',
+  'июня',
+  'июля',
+  'августа',
+  'сентября',
+  'октября',
+  'ноября',
+  'декабря',
+];
+
 export function formatPrice(price: number, note?: string): string {
-  const formatted = new Intl.NumberFormat('ru-RU').format(price) + ' ₽';
+  // Ручной форматтер — стабилен на сервере и клиенте без зависимости от ICU
+  const formatted = String(price).replace(/\B(?=(\d{3})+(?!\d))/g, ' ') + ' ₽';
   return note ? `${note} ${formatted}` : formatted;
 }
 
 export function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat('ru-RU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-  }).format(date);
+  // Разбираем строку ISO напрямую — не зависит от локали и часового пояса
+  const [year, month, day] = dateString.split('-').map(Number);
+  return `${day} ${MONTHS_RU[month - 1]} ${year}`;
 }
 
 export function formatReadTime(minutes: number): string {

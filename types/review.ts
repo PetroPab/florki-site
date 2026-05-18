@@ -9,6 +9,7 @@ export type Review = {
   text: string;
   originalUrl?: string;
   photos?: { src: string; alt: string }[];
+  workPhoto?: { src: string; alt: string };
   productSlug?: string;
   featured: boolean;
 };

@@ -5,7 +5,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { siteConfig } from '@/data/site';
 import Container from '@/components/ui/Container';
-import Heading from '@/components/ui/Heading';
 import Text from '@/components/ui/Text';
 
 export default function CTASection() {
@@ -44,9 +43,13 @@ export default function CTASection() {
           }}
           className="text-center"
         >
-          <Heading as="h2" size="display" className="text-white mb-4">
-            Сделаем флорариум <em className="display-em">под&nbsp;вас</em>
-          </Heading>
+          <h2
+            className="font-display leading-[1.15] tracking-[-0.015em] text-white mb-4"
+            style={{ fontSize: 'clamp(1.625rem, 2vw + 0.5rem, 2.25rem)' }}
+          >
+            Сделаем флорариум{' '}
+            <em className="display-em text-white">под&nbsp;вас</em>
+          </h2>
           <Text size="lg" className="text-white/80 mb-8 md:mb-10">
             Расскажите о своей идее — обсудим размер, форму, растения, сроки
             и&nbsp;бюджет. Отвечаем за&nbsp;15&nbsp;минут.

@@ -43,9 +43,12 @@
 - `.display-em` — italic Fraunces для акцентных слов в заголовках
 - `.heading-rule` / `.heading-rule-center` — размытый овальный орнамент под заголовком
 - `.glass-section` / `.glass-section-dense` — glassmorphism фоны секций
-- `.btn-shimmer` — hover-блик на кнопках
-- `.btn-pulse` — пульсирующее кольцо на главных CTA
+- `.btn-shimmer` — hover-блик на кнопках (overflow:hidden + ::before gradient)
+- `.btn-pulse` — пульсирующее box-shadow свечение на главных CTA
+- `.btn-pulse-sm` — уменьшенный вариант pulse для хедера
+- `.bg-blob-1/2/3` — fixed блобы на фоне (CSS keyframes, z-index 0)
 - `[data-reveal]` / `.revealed` — scroll-reveal через IntersectionObserver + CSS
+- `[data-gallery-row]` / `.revealed` — то же для рядов галереи
 
 ---
 

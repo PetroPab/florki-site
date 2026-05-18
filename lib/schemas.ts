@@ -56,6 +56,12 @@ export const ReviewSchema = z.object({
       })
     )
     .optional(),
+  workPhoto: z
+    .object({
+      src: z.string(),
+      alt: z.string(),
+    })
+    .optional(),
   productSlug: z.string().optional(),
   featured: z.boolean(),
 });

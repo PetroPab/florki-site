@@ -87,6 +87,7 @@ export default function ReviewsPageClient({ reviews }: Props) {
                 text={review.text}
                 originalUrl={review.originalUrl}
                 photos={review.photos}
+                workPhoto={review.workPhoto}
               />
             </motion.div>
           ))}

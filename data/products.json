@@ -133,7 +133,7 @@
     "createdAt": "2024-11-12"
   },
   {
-    "slug": "individualnyi-zakazz",
+    "slug": "individualnyi-zakaz",
     "name": "Флорариум под заказ",
     "category": "custom",
     "status": "on-order",
@@ -146,7 +146,7 @@
     "composition": ["по вашему выбору"],
     "images": [
       {
-        "src": "/images/products/individualnyi-zakazz/01.webp",
+        "src": "/images/products/individualnyi-zakaz/01.webp",
         "alt": "Флорариум под индивидуальный заказ — студия Флорки, Ярославль",
         "width": 1200,
         "height": 1200

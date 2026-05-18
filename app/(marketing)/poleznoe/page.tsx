@@ -6,6 +6,8 @@ import Text from '@/components/ui/Text';
 import ArticleCard from '@/components/blocks/ArticleCard';
 import type { ArticleTag } from '@/types/article';
 
+export const dynamic = 'force-static';
+
 export const metadata: Metadata = {
   title: 'Полезное — статьи о флорариумах | Флорки, Ярославль',
   description:
