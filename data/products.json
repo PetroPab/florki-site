@@ -161,7 +161,9 @@
     "description": "Создадим флорариум по вашему запросу. Вы выбираете стиль, размер, растения и сосуд — мы воплощаем. Подходит для подарка с персональным смыслом, для конкретного места в интерьере или как корпоративный сувенир.\n\nОбсуждаем в Telegram: расскажите об идее, и мы предложим варианты с бюджетом.",
     "care": "Зависит от выбранных растений — расскажем при заказе.",
     "dimensions": {},
-    "composition": ["по вашему выбору"],
+    "composition": [
+      "по вашему выбору"
+    ],
     "images": [
       {
         "src": "/images/products/individualnyi-zakaz/01.webp",
@@ -171,5 +173,33 @@
       }
     ],
     "createdAt": "2024-08-01"
+  },
+  {
+    "slug": "hitryj-novyj-testovyj-flo",
+    "name": "Хитрый новый тестовый фло",
+    "category": "florarium",
+    "status": "in-stock",
+    "featured": true,
+    "price": 9999,
+    "priceNote": "больше",
+    "description": "Красиввввоооо",
+    "care": "Никак",
+    "dimensions": {
+      "width": 3,
+      "height": 3,
+      "depth": 2,
+      "diameter": 3
+    },
+    "composition": [],
+    "images": [
+      {
+        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127164229.jpg",
+        "alt": "Хитрый новый тестовый фло",
+        "width": 1280,
+        "height": 1280
+      }
+    ],
+    "createdAt": "2026-05-18",
+    "updatedAt": "2026-05-18"
   }
 ]
