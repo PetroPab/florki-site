@@ -9,7 +9,12 @@ export async function GET() {
 }
 
 export async function PUT(req: NextRequest) {
-  const body = (await req.json()) as { products: Product[] };
-  await writeDataFile('products.json', body.products);
-  return NextResponse.json({ ok: true });
+  try {
+    const body = (await req.json()) as { products: Product[] };
+    await writeDataFile('products.json', body.products);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : String(e);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }

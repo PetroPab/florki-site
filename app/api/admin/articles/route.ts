@@ -22,23 +22,33 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
-  const body = (await req.json()) as {
-    slug: string;
-    frontmatter: ArticleFrontmatter;
-    content: string;
-  };
-  const raw = matter.stringify(
-    body.content,
-    body.frontmatter as Record<string, unknown>
-  );
-  await writeArticleFile(body.slug, raw);
-  return NextResponse.json({ ok: true });
+  try {
+    const body = (await req.json()) as {
+      slug: string;
+      frontmatter: ArticleFrontmatter;
+      content: string;
+    };
+    const raw = matter.stringify(
+      body.content,
+      body.frontmatter as Record<string, unknown>
+    );
+    await writeArticleFile(body.slug, raw);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : String(e);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function DELETE(req: NextRequest) {
-  const { slug } = (await req.json()) as { slug: string };
-  await deleteArticleFile(slug);
-  return NextResponse.json({ ok: true });
+  try {
+    const { slug } = (await req.json()) as { slug: string };
+    await deleteArticleFile(slug);
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    const message = e instanceof Error ? e.message : String(e);
+    return NextResponse.json({ error: message }, { status: 500 });
+  }
 }
 
 export async function PATCH(req: NextRequest) {

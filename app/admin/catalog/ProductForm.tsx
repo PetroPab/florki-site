@@ -143,11 +143,16 @@ export function ProductForm({ initial = {}, isNew = false }: ProductFormProps) {
         updated = allProducts.map((p) => (p.slug === slug ? product : p));
       }
 
-      await fetch('/api/admin/products', {
+      const saveRes = await fetch('/api/admin/products', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ products: updated }),
       });
+
+      if (!saveRes.ok) {
+        const err = (await saveRes.json()) as { error?: string };
+        throw new Error(err.error ?? `Ошибка сервера ${saveRes.status}`);
+      }
 
       router.push('/admin/catalog');
       router.refresh();
