@@ -13,7 +13,12 @@ export default function CTASection() {
 
   return (
     <section
-      className="relative overflow-hidden bg-accent py-16 md:py-24"
+      className="relative overflow-hidden py-16 md:py-24"
+      style={{
+        background: 'rgba(63, 93, 58, 0.82)',
+        backdropFilter: 'blur(40px) saturate(160%)',
+        WebkitBackdropFilter: 'blur(40px) saturate(160%)',
+      }}
       aria-label="Призыв к действию"
     >
       {/* Декоративный фон */}
@@ -39,12 +44,12 @@ export default function CTASection() {
           }}
           className="text-center"
         >
-          <Heading as="h2" size="h1" className="text-white mb-4">
-            Сделаем <em className="display-em">флорариум</em> под&nbsp;вас
+          <Heading as="h2" size="display" className="text-white mb-4">
+            Сделаем флорариум <em className="display-em">под&nbsp;вас</em>
           </Heading>
           <Text size="lg" className="text-white/80 mb-8 md:mb-10">
-            Расскажите о своей идее — обсудим размер, растения и&nbsp;бюджет.
-            Отвечаем за&nbsp;15&nbsp;минут.
+            Расскажите о своей идее — обсудим размер, форму, растения, сроки
+            и&nbsp;бюджет. Отвечаем за&nbsp;15&nbsp;минут.
           </Text>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -52,7 +57,7 @@ export default function CTASection() {
               href={siteConfig.contacts.telegram}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-white text-accent font-medium text-base hover:bg-bg-elevated hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+              className="btn-shimmer btn-pulse inline-flex items-center gap-2 h-14 px-8 rounded-full bg-white text-accent font-medium text-base hover:bg-bg-elevated hover:-translate-y-0.5 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
             >
               <MessageCircle size={18} strokeWidth={1.5} aria-hidden="true" />
               Написать в Telegram
@@ -60,7 +65,7 @@ export default function CTASection() {
 
             <Link
               href="/kontakty"
-              className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-transparent text-white font-medium text-base border border-white/40 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
+              className="btn-shimmer inline-flex items-center gap-2 h-14 px-8 rounded-full bg-transparent text-white font-medium text-base border border-white/40 hover:bg-white/10 hover:-translate-y-0.5 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-accent"
             >
               Заполнить форму
               <ArrowRight size={18} strokeWidth={1.5} aria-hidden="true" />

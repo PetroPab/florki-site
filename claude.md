@@ -22,16 +22,30 @@
 
 ## 🛠 Стек
 
-- **Next.js 14** (App Router) + **TypeScript** (strict)
-- **Tailwind CSS** + **Framer Motion** (точечно)
+- **Next.js 15** (App Router, Turbopack) + **TypeScript** (strict)
+- **Tailwind CSS v3** + **Framer Motion** (точечно, только где нужна JS-анимация)
 - **Lucide React** — иконки
 - **React Hook Form** + **Zod** — формы и валидация
-- **Resend** — отправка писем со страницы /contacts
+- **Resend** — отправка писем со страницы /kontakty
 - **MDX** + **next-mdx-remote** — статьи /poleznoe
-- **Embla Carousel** — карусель отзывов на главной
 - **Radix UI Dialog** — модалка выбора канала связи
+- **nextjs-toploader** — прогресс-бар при навигации
 - **Vercel** — хостинг и деплой
 - **Домен:** florki.ru
+
+**Шрифты:**
+
+- **Fraunces** — display (заголовки, variable, italic для `.display-em`)
+- **Golos Text** — body (основной текст, кириллица)
+
+**Ключевые CSS-паттерны:**
+
+- `.display-em` — italic Fraunces для акцентных слов в заголовках
+- `.heading-rule` / `.heading-rule-center` — размытый овальный орнамент под заголовком
+- `.glass-section` / `.glass-section-dense` — glassmorphism фоны секций
+- `.btn-shimmer` — hover-блик на кнопках
+- `.btn-pulse` — пульсирующее кольцо на главных CTA
+- `[data-reveal]` / `.revealed` — scroll-reveal через IntersectionObserver + CSS
 
 ---
 
@@ -45,9 +59,10 @@
    токены, правила glassmorphism.
 3. **`design-system/MASTER.md`** — главный источник
    правды по UI: компоненты, состояния, паттерны.
-4. **`docs/04-content-plan.md`** — структура каталога,
+4. **`docs/04-content-guide.md`** — структура каталога,
    отзывов, статей.
-5. **`docs/06-roadmap.md`** — план работ по спринтам.
+5. **`docs/05-roadmap.md`** — текущий статус и план работ.
+6. **`docs/IMAGES.md`** — какие фото нужны, форматы, приоритеты.
 
 Остальные docs — справочные, читать по необходимости.
 

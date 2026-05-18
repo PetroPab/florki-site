@@ -70,6 +70,7 @@ export function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
+                  'btn-shimmer btn-pulse',
                   'hidden md:inline-flex items-center gap-2',
                   'h-10 px-5 rounded-full text-sm font-medium',
                   'bg-accent text-white',

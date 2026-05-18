@@ -34,7 +34,7 @@ export default function FeaturedProducts() {
       <div className="flex justify-center mt-12 md:mt-14">
         <Link
           href="/katalog"
-          className="inline-flex items-center gap-3 h-14 px-10 rounded-full bg-accent text-white font-semibold text-base hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
+          className="btn-shimmer inline-flex items-center gap-3 h-14 px-10 rounded-full bg-accent text-white font-semibold text-base hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2"
         >
           Смотреть все работы
           <ArrowRight size={18} strokeWidth={1.5} aria-hidden="true" />

@@ -10,7 +10,9 @@
       "Bash(findstr LISTENING)",
       "Bash(taskkill /PID 47960 /F)",
       "PowerShell(Stop-Process -Id \\(netstat -ano | Select-String \":3001\" | ForEach-Object { \\($_ -split '\\\\s+'\\)[-1] } | Select-Object -First 1\\) -Force -ErrorAction SilentlyContinue; Write-Host \"Done\")",
-      "PowerShell(netstat -ano)"
+      "PowerShell(netstat -ano)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Projects\\\\Флорки\\\\florki-site\" -Directory)",
+      "Bash(Select-Object -ExpandProperty Name)"
     ]
   }
 }

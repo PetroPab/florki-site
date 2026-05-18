@@ -20,8 +20,8 @@ const spacingClasses: Record<SectionSpacing, string> = {
 };
 
 const backgroundClasses: Record<SectionBackground, string> = {
-  default: 'bg-bg',
-  muted: 'bg-surface-1',
+  default: 'glass-section',
+  muted: 'glass-section-dense',
   accent: 'bg-accent-soft',
 };
 

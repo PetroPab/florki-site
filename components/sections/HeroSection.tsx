@@ -81,7 +81,7 @@ export default function HeroSection() {
             >
               <Link
                 href="/katalog"
-                className="inline-flex items-center gap-2 h-14 px-8 rounded-full bg-accent text-white font-medium text-base shadow-sm hover:shadow-md hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+                className="btn-shimmer inline-flex items-center gap-2 h-14 px-8 rounded-full bg-accent text-white font-medium text-base shadow-sm hover:shadow-md hover:bg-accent-hover hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
               >
                 Смотреть каталог
                 <ArrowRight size={18} strokeWidth={1.5} aria-hidden="true" />

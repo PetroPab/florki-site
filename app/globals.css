@@ -88,10 +88,11 @@
   html {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    @apply bg-bg;
   }
 
   body {
-    @apply bg-bg text-text-primary antialiased;
+    @apply text-text-primary antialiased;
     font-feature-settings:
       'kern' 1,
       'liga' 1;
@@ -118,6 +119,7 @@
 
 /* ─── Glassmorphism ─── */
 @layer utilities {
+  /* Компонентное стекло (хедер, карточки) */
   .glass {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(20px) saturate(180%);
@@ -126,10 +128,29 @@
     box-shadow: var(--shadow-glass);
   }
 
-  /* Fallback для браузеров без backdrop-filter */
-  @supports not (backdrop-filter: blur(20px)) {
+  /* Секционное стекло — тёплый полупрозрачный фон для секций */
+  .glass-section {
+    background: rgba(250, 248, 245, 0.45);
+    backdrop-filter: blur(36px) saturate(160%);
+    -webkit-backdrop-filter: blur(36px) saturate(160%);
+  }
+
+  /* Чуть плотнее — для акцентных мутных секций */
+  .glass-section-dense {
+    background: rgba(243, 239, 233, 0.55);
+    backdrop-filter: blur(40px) saturate(170%);
+    -webkit-backdrop-filter: blur(40px) saturate(170%);
+  }
+
+  @supports not (backdrop-filter: blur(36px)) {
     .glass {
       background: rgba(250, 248, 245, 0.97);
+    }
+    .glass-section {
+      background: rgba(250, 248, 245, 0.92);
+    }
+    .glass-section-dense {
+      background: rgba(243, 239, 233, 0.95);
     }
   }
 
@@ -210,6 +231,178 @@
 [data-reveal].revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ─── Плавающие фоновые блобы ─── */
+.bg-blob {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(72px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* Блоб 1 — зелёный, левый верх, большой */
+.bg-blob-1 {
+  width: 900px;
+  height: 900px;
+  top: -20%;
+  left: -18%;
+  background: radial-gradient(
+    circle,
+    rgba(63, 93, 58, 0.3) 0%,
+    transparent 68%
+  );
+  animation: blobMove1 55s ease-in-out infinite;
+}
+
+/* Блоб 2 — охровый, правый низ, средний */
+.bg-blob-2 {
+  width: 780px;
+  height: 780px;
+  bottom: -22%;
+  right: -16%;
+  background: radial-gradient(
+    circle,
+    rgba(198, 139, 95, 0.26) 0%,
+    transparent 68%
+  );
+  animation: blobMove2 45s ease-in-out infinite;
+}
+
+/* Блоб 3 — зелёный, правый верх, поменьше */
+.bg-blob-3 {
+  width: 600px;
+  height: 600px;
+  top: -10%;
+  right: -8%;
+  background: radial-gradient(
+    circle,
+    rgba(63, 93, 58, 0.16) 0%,
+    transparent 68%
+  );
+  animation: blobMove3 65s ease-in-out infinite;
+}
+
+@keyframes blobMove1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  15% {
+    transform: translate(90px, 60px) scale(1.05);
+  }
+  30% {
+    transform: translate(40px, 140px) scale(0.97);
+  }
+  45% {
+    transform: translate(130px, 80px) scale(1.08);
+  }
+  60% {
+    transform: translate(60px, 180px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, 90px) scale(1.03);
+  }
+  90% {
+    transform: translate(100px, 30px) scale(1.06);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blobMove2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  20% {
+    transform: translate(-80px, -70px) scale(1.06);
+  }
+  40% {
+    transform: translate(-140px, -30px) scale(0.96);
+  }
+  55% {
+    transform: translate(-60px, -120px) scale(1.04);
+  }
+  70% {
+    transform: translate(-110px, -50px) scale(0.98);
+  }
+  85% {
+    transform: translate(-30px, -90px) scale(1.07);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blobMove3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  18% {
+    transform: translate(-70px, 80px) scale(1.04);
+  }
+  35% {
+    transform: translate(-30px, 150px) scale(0.96);
+  }
+  50% {
+    transform: translate(-100px, 60px) scale(1.06);
+  }
+  68% {
+    transform: translate(-50px, 120px) scale(0.98);
+  }
+  83% {
+    transform: translate(-80px, 40px) scale(1.03);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* ─── Shimmer на кнопках ─── */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.22) 50%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.42s ease;
+}
+.btn-shimmer:hover::before {
+  transform: translateX(100%);
+}
+
+/* ─── Pulse-кольцо на главной CTA-кнопке ─── */
+.btn-pulse {
+  position: relative;
+}
+.btn-pulse::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px solid currentColor;
+  opacity: 0;
+  animation: pulseRing 2.6s ease-out infinite;
+}
+@keyframes pulseRing {
+  0% {
+    inset: 0px;
+    opacity: 0.55;
+  }
+  100% {
+    inset: -10px;
+    opacity: 0;
+  }
 }
 
 /* ─── Reduced motion ─── */
