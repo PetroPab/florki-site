@@ -195,5 +195,31 @@
     ],
     "createdAt": "2026-05-18",
     "updatedAt": "2026-05-18"
+  },
+  {
+    "slug": "novyj-test",
+    "name": "Новый тест",
+    "category": "florarium",
+    "status": "in-stock",
+    "featured": false,
+    "price": 2321331,
+    "description": "ываывфавыаыва",
+    "care": "ваыфвыа",
+    "dimensions": {
+      "width": 1,
+      "height": 4,
+      "depth": 2
+    },
+    "composition": [],
+    "images": [
+      {
+        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779128591957.jpg",
+        "alt": "Новый тест",
+        "width": 741,
+        "height": 593
+      }
+    ],
+    "createdAt": "2026-05-18",
+    "updatedAt": "2026-05-18"
   }
 ]
