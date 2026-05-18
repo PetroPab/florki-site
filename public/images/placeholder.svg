@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <rect width="800" height="800" fill="#F3EFE9"/>
+  <!-- Stem -->
+  <line x1="400" y1="560" x2="400" y2="320" stroke="#3F5D3A" stroke-width="3" stroke-linecap="round"/>
+  <!-- Left branch -->
+  <line x1="400" y1="430" x2="330" y2="370" stroke="#3F5D3A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Right branch -->
+  <line x1="400" y1="390" x2="470" y2="340" stroke="#3F5D3A" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Leaves -->
+  <ellipse cx="315" cy="355" rx="28" ry="18" fill="#5A8F5C" opacity="0.7" transform="rotate(-30 315 355)"/>
+  <ellipse cx="485" cy="328" rx="28" ry="18" fill="#3F5D3A" opacity="0.8" transform="rotate(20 485 328)"/>
+  <ellipse cx="400" cy="308" rx="22" ry="32" fill="#5A8F5C" opacity="0.9" transform="rotate(-5 400 308)"/>
+  <!-- Glass dome outline -->
+  <ellipse cx="400" cy="555" rx="95" ry="18" fill="none" stroke="#C4BBA8" stroke-width="2"/>
+  <path d="M305,555 Q305,420 400,380 Q495,420 495,555" fill="none" stroke="#C4BBA8" stroke-width="2"/>
+  <!-- Moss dots -->
+  <circle cx="350" cy="548" r="5" fill="#5A8F5C" opacity="0.5"/>
+  <circle cx="370" cy="552" r="4" fill="#3F5D3A" opacity="0.4"/>
+  <circle cx="420" cy="550" r="6" fill="#5A8F5C" opacity="0.5"/>
+  <circle cx="445" cy="546" r="4" fill="#3F5D3A" opacity="0.4"/>
+  <circle cx="400" cy="555" r="5" fill="#5A8F5C" opacity="0.3"/>
+</svg>
