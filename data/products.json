@@ -175,26 +175,25 @@
     "createdAt": "2024-08-01"
   },
   {
-    "slug": "hitryj-novyj-testovyj-flo",
-    "name": "Хитрый новый тестовый фло",
+    "slug": "ravportvdatpysht",
+    "name": "равпортвдатпышт",
     "category": "florarium",
     "status": "in-stock",
     "featured": true,
-    "price": 9999,
-    "priceNote": "больше",
-    "description": "Красиввввоооо",
-    "care": "Никак",
+    "price": 453453,
+    "description": "выфппафап",
+    "care": "фвыпыпв",
     "dimensions": {
-      "width": 3,
-      "height": 3,
-      "depth": 2,
-      "diameter": 3
+      "width": 4,
+      "height": 4,
+      "depth": 3,
+      "diameter": 2
     },
     "composition": [],
     "images": [
       {
-        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127164229.jpg",
-        "alt": "Хитрый новый тестовый фло",
+        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127232756.jpg",
+        "alt": "равпортвдатпышт",
         "width": 1280,
         "height": 1280
       }
