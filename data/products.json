@@ -1,7 +1,7 @@
 [
   {
     "slug": "mshistyi-les",
-    "name": "Мшистый лес ТЕСТ",
+    "name": "Мшистый лес",
     "category": "florarium",
     "status": "in-stock",
     "featured": false,
@@ -65,7 +65,7 @@
     "category": "florarium",
     "status": "in-stock",
     "featured": true,
-    "price": 7200,
+    "price": 44400,
     "description": "Большой закрытый флорариум в прямоугольном стеклянном домике. Несколько видов мха, папоротники и маленькие фикусы создают настоящий тропический уголок. Самодостаточная экосистема — конденсат сам поливает растения.\n\nЭффектно смотрится на полке или журнальном столике. Размер 30×20×25 см.",
     "care": "Не нужен полив. Раз в месяц — проветривание 30 минут. Рассеянный свет.",
     "dimensions": {
@@ -88,7 +88,8 @@
         "height": 800
       }
     ],
-    "createdAt": "2024-10-20"
+    "createdAt": "2024-10-20",
+    "updatedAt": "2026-05-18"
   },
   {
     "slug": "yaponskiy-motiv",
@@ -161,9 +162,7 @@
     "description": "Создадим флорариум по вашему запросу. Вы выбираете стиль, размер, растения и сосуд — мы воплощаем. Подходит для подарка с персональным смыслом, для конкретного места в интерьере или как корпоративный сувенир.\n\nОбсуждаем в Telegram: расскажите об идее, и мы предложим варианты с бюджетом.",
     "care": "Зависит от выбранных растений — расскажем при заказе.",
     "dimensions": {},
-    "composition": [
-      "по вашему выбору"
-    ],
+    "composition": ["по вашему выбору"],
     "images": [
       {
         "src": "/images/products/individualnyi-zakaz/01.webp",
@@ -173,53 +172,5 @@
       }
     ],
     "createdAt": "2024-08-01"
-  },
-  {
-    "slug": "schmchsmyachsmschmyam",
-    "name": "счмчсмячсмсчмям",
-    "category": "florarium",
-    "status": "in-stock",
-    "featured": false,
-    "price": 33333,
-    "description": "ваываыа",
-    "care": "выаыва",
-    "dimensions": {},
-    "composition": [],
-    "images": [
-      {
-        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779127288081.jpg",
-        "alt": "счмчсмячсмсчмям",
-        "width": 4096,
-        "height": 4096
-      }
-    ],
-    "createdAt": "2026-05-18",
-    "updatedAt": "2026-05-18"
-  },
-  {
-    "slug": "novyj-test",
-    "name": "Новый тест",
-    "category": "florarium",
-    "status": "in-stock",
-    "featured": false,
-    "price": 2321331,
-    "description": "ываывфавыаыва",
-    "care": "ваыфвыа",
-    "dimensions": {
-      "width": 1,
-      "height": 4,
-      "depth": 2
-    },
-    "composition": [],
-    "images": [
-      {
-        "src": "https://qakt845tfcii1bb9.public.blob.vercel-storage.com/products/1779128591957.jpg",
-        "alt": "Новый тест",
-        "width": 741,
-        "height": 593
-      }
-    ],
-    "createdAt": "2026-05-18",
-    "updatedAt": "2026-05-18"
   }
 ]
